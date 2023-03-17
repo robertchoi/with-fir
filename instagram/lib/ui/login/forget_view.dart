@@ -26,7 +26,7 @@ class ForgotPasswordView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('비밀번호 찾기',
+              const Text('비밀번호 새로 정하기',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
               const SizedBox(height: 100),
               _inputEmail(),

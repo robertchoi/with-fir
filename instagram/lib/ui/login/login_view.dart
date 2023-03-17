@@ -109,7 +109,7 @@ class LoginView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 30),
                   //logo
-                  const Text('Wegram',
+                  const Text('Instagram',
                       style: TextStyle(
                         fontFamily: 'logoFont',
                         fontSize: 50,
@@ -117,10 +117,10 @@ class LoginView extends StatelessWidget {
                       )),
                   const SizedBox(height: 60),
                   //아이디
-                  _loginForm(idController, '전화번호, 사용자 이름 또는 이메일'),
+                  _loginForm(idController, '이메일을 입력하세요!'),
                   const SizedBox(height: 10),
                   //비밀번호
-                  _loginForm(passwordController, '비밀번호', obscureText: true),
+                  _loginForm(passwordController, '비밀번호를 입력하세요!', obscureText: true),
                   const SizedBox(height: 20),
                   //로그인버튼
                   _loginButton(context),

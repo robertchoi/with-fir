@@ -109,7 +109,7 @@ class SignUpView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text('Wegram',
+                    const Text('Instagram',
                         style: TextStyle(
                           fontFamily: 'logoFont',
                           fontSize: 50,

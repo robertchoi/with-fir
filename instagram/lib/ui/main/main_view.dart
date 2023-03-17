@@ -14,7 +14,7 @@ class MainView extends StatelessWidget {
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
-      title: const Text('Wegram',
+      title: const Text('Instagram',
           style: TextStyle(
               color: Colors.black,
               fontSize: 30,
