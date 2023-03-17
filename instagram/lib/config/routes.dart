@@ -9,7 +9,7 @@ class RouteNames {
 }
 
 var namedRoutes = {
-  RouteNames.splash: (context) => const Auth(),
+  RouteNames.splash: (context) => Auth(),
   RouteNames.signUp: (context) => const SignUpPage(),
   RouteNames.forgotPassword: (context) => ForgotPasswordView(),
 

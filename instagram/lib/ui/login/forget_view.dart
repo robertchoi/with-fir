@@ -14,7 +14,7 @@ class ForgotPasswordView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffF5F5F5),
-      appBar: _appBar(context),
+      // appBar: _appBar(context),
       body: Container(
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 150),
@@ -39,16 +39,16 @@ class ForgotPasswordView extends StatelessWidget {
     );
   }
 
-  _appBar(context) {
-    return AppBar(
-        backgroundColor: const Color(0xffF5F5F5),
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.black)));
-  }
+  // _appBar(context) {
+  //   return AppBar(
+  //       backgroundColor: const Color(0xffF5F5F5),
+  //       elevation: 0,
+  //       leading: IconButton(
+  //           onPressed: () {
+  //             Navigator.pop(context);
+  //           },
+  //           icon: const Icon(Icons.arrow_back_ios, color: Colors.black)));
+  // }
 
   _inputEmail() {
     return Padding(

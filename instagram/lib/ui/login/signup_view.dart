@@ -132,24 +132,21 @@ class SignUpView extends StatelessWidget {
                     _textOneItem('Password', passwordController,
                         obscureText: true),
                     const SizedBox(height: 20),
-                    Consumer<SignUpViewModel>(
-                      builder: (_, buttonColor, __) => SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: _empty()
-                                    ? Colors.blue
-                                    : Colors.lightBlueAccent.withOpacity(0.5)),
-                            onPressed: () async {
-                              if(formKey.currentState!.validate()){
-                                await _register(context, emailController.text,
-                                    passwordController.text);
-                                _showToast('회원가입 성공!');
-                              }
-                            },
-                            child: const Text('Sign up')),
-                      ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: _empty()
+                                  ? Colors.blue
+                                  : Colors.lightBlueAccent.withOpacity(0.5)),
+                          onPressed: () async {
+                            if(formKey.currentState!.validate()){
+                              await _register(context, emailController.text,
+                                  passwordController.text);
+                              _showToast('회원가입 성공!');
+                            }
+                          },
+                          child: const Text('Sign up')),
                     ),
                     const SizedBox(height: 30),
                     const Text.rich(
