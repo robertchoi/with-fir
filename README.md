@@ -1,4 +1,6 @@
 # :fire:With - fri:fire:
+[![version](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=Flutter&logoColor=white)](https://docs.flutter.dev/get-started/install)
+![version](https://img.shields.io/badge/v.3.7.3-512BD4?style=flat)
 - 2023.02.17 ~ 매주 금요일 오후 7시에 진행되는 미팅 멤버입니다.<br> :star:(**2023.03.30 목요일부터 매주 목요일 오후 7시로 변경되었습니다.**):star:
 - **작은 프로젝트부터 큰 프로젝트**를 실제 스토어에 등록하기 위해 시작한 미팅입니다.
 <br>
