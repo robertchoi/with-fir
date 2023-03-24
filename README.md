@@ -44,3 +44,7 @@
 <br>
 
 - 5주 차 (2023.03.17 ~ 2023.03.24)
+  > - 4주 차까지의 코드 리뷰 & 질문.
+  > - 6주 차까지 게시물 등록 시 목록 보여주도록 구현해오기.<br><br>
+  참고 UI: https://github.com/hodu-angel/with-fir/blob/master/ui/3%EC%A3%BC%EC%B0%A8%5B%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4%5D.PNG
+<br>
