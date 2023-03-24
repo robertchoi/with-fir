@@ -1,48 +1,48 @@
 {
   "project_info": {
-    "project_number": "874118977885",
-    "project_id": "wegram-23ec9",
-    "storage_bucket": "wegram-23ec9.appspot.com"
+    "project_number": "267247865898",
+    "project_id": "flutter101-68ad8",
+    "storage_bucket": "flutter101-68ad8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:874118977885:android:63c65c1223830aa1fcb0b4",
+        "mobilesdk_app_id": "1:267247865898:android:9fed190dfb0c177e4eb353",
         "android_client_info": {
-          "package_name": "com.example.instagram"
+          "package_name": "com.example.flutter101"
         }
       },
       "oauth_client": [
         {
-          "client_id": "874118977885-if33pooqg49927n4knvfjo7l6tuvf33b.apps.googleusercontent.com",
+          "client_id": "267247865898-ba6tt3bca3hasljh88rej23g9dhsfkj1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.instagram",
-            "certificate_hash": "44c71e32446622bb14287fcb8bacb7423e267687"
+            "package_name": "com.example.flutter101",
+            "certificate_hash": "75f2f5c4c41a81e80e9a8b93e3d475ba0dd3f189"
           }
         },
         {
-          "client_id": "874118977885-c4eeoi4k7nvrtc9f0ptef1kbtfojo10a.apps.googleusercontent.com",
+          "client_id": "267247865898-n5jubh82j595p01bug5f5edqs28omd1i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCCoZzMQ8A9WcDase5IRgKz1BvE7EZRkLg"
+          "current_key": "AIzaSyB4mMKmPllZtFT58DN0ivrrLQMJK0-Bp2k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "874118977885-587vfoe8s57bq9ovg084frogbhvagv8h.apps.googleusercontent.com",
+              "client_id": "267247865898-550vpbk3bmblk96gfiatv91iedst9h9p.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "874118977885-7sn9s0f4u75jivvfnkpj3f24157msm6q.apps.googleusercontent.com",
+              "client_id": "267247865898-2ep47rjg9ekrv3k03p5pd89js7jce6f6.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.instagram"
+                "bundle_id": "com.example.flutter101"
               }
             }
           ]
