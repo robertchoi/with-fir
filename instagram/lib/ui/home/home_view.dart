@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/ui/home/home_view_model.dart';
-import 'package:instagram/ui/main/main_view.dart';
+import 'package:instagram/ui/main/main_page.dart';
+import 'package:instagram/ui/post/post_page.dart';
+import 'package:instagram/ui/profile/profile_page.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,15 +12,17 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Consumer<HomeViewModel>(builder: (_, model, __) {
         return IndexedStack(
           index: model.currentIndex,
           children: const [
-            MainView(),
+            MainPage(),
             Center(child: Text('검색 페이지')),
-            Center(child: Text('3번째 페이지')),
+            // Center(child: Text('3번째 페이지')),
+            PostPage(),
             Center(child: Text('4번째 페이지')),
-            Center(child: Text('프로필 페이지'))
+            ProfilePage(),
           ],
         );
       }),
@@ -71,17 +75,17 @@ class HomeView extends StatelessWidget {
     });
   }
 
-  _signOut() {
-    return ElevatedButton(
-      onPressed: () async {
-        try {
-          FirebaseAuth.instance.signOut();
-          print('logout');
-        } catch (e) {
-          print(e.toString());
-        }
-      },
-      child: const Text('로그아웃'),
-    );
-  }
+// _signOut() {
+//   return ElevatedButton(
+//     onPressed: () async {
+//       try {
+//         FirebaseAuth.instance.signOut();
+//         print('logout');
+//       } catch (e) {
+//         print(e.toString());
+//       }
+//     },
+//     child: const Text('로그아웃'),
+//   );
+// }
 }

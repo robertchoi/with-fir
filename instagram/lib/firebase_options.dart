@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '874118977885',
     projectId: 'wegram-23ec9',
     storageBucket: 'wegram-23ec9.appspot.com',
+    androidClientId: '874118977885-if33pooqg49927n4knvfjo7l6tuvf33b.apps.googleusercontent.com',
     iosClientId: '874118977885-7sn9s0f4u75jivvfnkpj3f24157msm6q.apps.googleusercontent.com',
     iosBundleId: 'com.example.instagram',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '874118977885',
     projectId: 'wegram-23ec9',
     storageBucket: 'wegram-23ec9.appspot.com',
+    androidClientId: '874118977885-if33pooqg49927n4knvfjo7l6tuvf33b.apps.googleusercontent.com',
     iosClientId: '874118977885-7sn9s0f4u75jivvfnkpj3f24157msm6q.apps.googleusercontent.com',
     iosBundleId: 'com.example.instagram',
   );

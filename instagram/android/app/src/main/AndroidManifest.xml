@@ -1,10 +1,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.instagram">
+    <uses-permission android:name="android.permission,INTERNET"/>
    <application
         android:label="instagram"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <activity
+       <activity android:name="com.kakao.sdk.flutter.AuthCodeCustomTabsActivity">
+           <intent-filter android:label="flutter_web_auth">
+               <action android:name="android.intent.action.VIEW" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+
+               <!-- Redirect URI, "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식 -->
+               <data android:scheme="kakao42a5f4590f539cc2b2865ff97e92e9bc" android:host="oauth"/>
+           </intent-filter>
+       </activity>
+       <activity
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"

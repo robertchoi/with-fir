@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeViewModel with ChangeNotifier {
-  final List _bottomIndex = [0];
+  List _bottomIndex = [0];
 
   get currentIndex => _bottomIndex.last;
 
@@ -21,6 +21,11 @@ class HomeViewModel with ChangeNotifier {
     notifyListeners();
   }
 
+  void resetBottomIndex(){
+    _bottomIndex = [0];
+    print(_bottomIndex);
+    notifyListeners();
+  }
   // Future<bool> willPopAction() async {
   //   if (_bottomIndex.isEmpty) {
   //     return showDialog(context: context!, builder: (_)=> ShowDialogView());

@@ -1,6 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/config/routes.dart';
+import 'package:instagram/ui/home/home_page.dart';
 import 'package:instagram/ui/login/login_view_model.dart';
 
 class LoginView extends StatelessWidget {
@@ -9,85 +9,6 @@ class LoginView extends StatelessWidget {
   final LoginViewModel loginViewModel = LoginViewModel();
   final idController = TextEditingController();
   final passwordController = TextEditingController();
-
-  /// 로그인폼
-  _loginForm(controller, hintText, {obscureText = false}) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      decoration: InputDecoration(
-          filled: true,
-          isDense: true,
-          hintText: hintText,
-          hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(color: Colors.grey.withOpacity(0.6)))),
-    );
-  }
-
-  /// 로그인 버튼
-  _loginButton(context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 40,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10))),
-        onPressed: () {
-          loginViewModel.singIn(
-              context, idController.text, passwordController.text);
-        },
-        child: const Text('로그인',
-            style: TextStyle(color: Colors.white, fontSize: 17)),
-      ),
-    );
-  }
-
-  /// 소셜로그인 버튼
-  _socialLogin() {
-    return GestureDetector(
-      onTap: () {
-        loginViewModel.googleLogin();
-        print('소셜로그인');
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/google-icon.png', scale: 3),
-          const SizedBox(width: 10),
-          const Text('Google로 로그인', style: TextStyle(color: Colors.red)),
-        ],
-      ),
-    );
-  }
-
-  /// 회원가입 버튼
-  _registerButton(context) {
-    return TextButton(
-        onPressed: () {
-          print('회원가입 페이지 이동');
-          Navigator.pushNamed(context, RouteNames.signUp);
-        },
-        child: const Text('가입하기',
-            style: TextStyle(
-                color: Colors.blue,
-                fontSize: 15,
-                fontWeight: FontWeight.bold)));
-  }
-
-  /// 비밀번호 재설정 버튼
-  Widget _forgotButton(context) {
-    return TextButton(
-        onPressed: () {
-          print('비밀번호재설정');
-          Navigator.pushNamed(context, RouteNames.forgotPassword);
-        },
-        child: const Text('비밀번호를 잊으셨나요?'));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +61,7 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   //소셜로그인
-                  _socialLogin(),
+                  _socialLogin(context),
                   const SizedBox(height: 10),
                   //비밀번호잊었을 때
                   _forgotButton(context),
@@ -167,5 +88,112 @@ class LoginView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  /// 로그인폼
+  _loginForm(controller, hintText, {obscureText = false}) {
+    return TextFormField(
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+          filled: true,
+          isDense: true,
+          hintText: hintText,
+          hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5),
+              borderSide: BorderSide(color: Colors.grey.withOpacity(0.6)))),
+    );
+  }
+
+  /// 로그인 버튼
+  _loginButton(context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 40,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.lightBlue,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10))),
+        onPressed: () {
+          loginViewModel.singIn(
+              context, idController.text, passwordController.text);
+        },
+        child: const Text('로그인',
+            style: TextStyle(color: Colors.white, fontSize: 17)),
+      ),
+    );
+  }
+
+  /// 소셜로그인 버튼
+  _socialLogin(context) {
+    return Column(
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white60,
+              padding: const EdgeInsets.symmetric(vertical: 5)),
+          onPressed: () {
+            loginViewModel.googleLogin();
+            print('구글 로그인');
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/google-icon.png', scale: 3),
+              const SizedBox(width: 10),
+              const Text('Google로 로그인', style: TextStyle(color: Colors.red)),
+            ],
+          ),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.yellow,
+              padding: const EdgeInsets.symmetric(vertical: 5)),
+          onPressed: () {
+            print('카카오 로그인');
+            // loginViewModel.kakaoLogin().whenComplete(() => Navigator.popAndPushNamed(context, RouteNames.home));
+            loginViewModel.kakaoLogin();
+            if (loginViewModel.isKakaoLogin == true) {
+              Navigator.popAndPushNamed(context, RouteNames.home);
+            }
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/kakao_icon.PNG', scale: 3),
+              const SizedBox(width: 10),
+              const Text('Kakao로 로그인', style: TextStyle(color: Colors.red)),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  /// 회원가입 버튼
+  _registerButton(context) {
+    return TextButton(
+        onPressed: () {
+          print('회원가입 페이지 이동');
+          Navigator.pushNamed(context, RouteNames.signUp);
+        },
+        child: const Text('가입하기',
+            style: TextStyle(
+                color: Colors.blue,
+                fontSize: 15,
+                fontWeight: FontWeight.bold)));
+  }
+
+  /// 비밀번호 재설정 버튼
+  Widget _forgotButton(context) {
+    return TextButton(
+        onPressed: () {
+          print('비밀번호재설정');
+          Navigator.pushNamed(context, RouteNames.forgotPassword);
+        },
+        child: const Text('비밀번호를 잊으셨나요?'));
   }
 }
